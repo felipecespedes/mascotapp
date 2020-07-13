@@ -1,4 +1,4 @@
-# mascotapp
+# Mascotapp
 
 A new Flutter project.
 
