@@ -122,8 +122,6 @@ class Profile extends StatelessWidget {
   Widget renderBoxSection() {
     return Padding(
       padding: EdgeInsets.only(
-        left: 5,
-        right: 5,
         top: 20,
         bottom: 20
       ),
@@ -132,19 +130,29 @@ class Profile extends StatelessWidget {
           Expanded(
             child: Container(
               child: Center(
-                child: Text(
-                  this.pet.characteristics[0],
-                  style: GoogleFonts.roboto(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xffD44620)
-                  )
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      child: Icon(Icons.pets, color: Color(0xffD44620)),
+                      margin: EdgeInsets.only(
+                        bottom: 5
+                      ),
+                    ),
+                    Text(
+                      this.pet.characteristics[0],
+                      style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xffD44620),
+                      ),
+                    )
+                  ],
                 ),
               ),
               height: 110,
               margin: EdgeInsets.only(
                 right: 5,
-                left: 5
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -155,13 +163,24 @@ class Profile extends StatelessWidget {
           Expanded(
             child: Container(
               child: Center(
-                child: Text(
-                  this.pet.characteristics[1],
-                  style: GoogleFonts.roboto(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff5A3FE5)
-                  ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      child: Icon(Icons.star, color: Color(0xff5A3FE5)),
+                      margin: EdgeInsets.only(
+                        bottom: 5
+                      ),
+                    ),
+                    Text(
+                      this.pet.characteristics[1],
+                      style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff5A3FE5)
+                      ),
+                    ),
+                  ]
                 ),
               ),
               height: 110,
@@ -178,18 +197,28 @@ class Profile extends StatelessWidget {
           Expanded(
             child: Container(
               child: Center(
-                child: Text(
-                  this.pet.characteristics[2],
-                  style: GoogleFonts.roboto(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff5A3FE5)
-                  ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      child: Icon(Icons.music_note, color: Color(0xff01D6C2)),
+                      margin: EdgeInsets.only(
+                        bottom: 5
+                      ),
+                    ),
+                    Text(
+                      this.pet.characteristics[2],
+                      style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff5A3FE5)
+                      ),
+                    )
+                  ]
                 ),
               ),
               height: 110,
               margin: EdgeInsets.only(
-                right: 5,
                 left: 5
               ),
               decoration: BoxDecoration(
