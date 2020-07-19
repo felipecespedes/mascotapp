@@ -54,9 +54,9 @@ class Profile extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        this.renderHeader(),
-                        this.renderBoxSection(),
-                        this.renderBody(),
+                        this.buildHeader(),
+                        this.buildBoxSection(),
+                        this.buildBody(),
                       ],
                     ),
                   ),
@@ -78,7 +78,7 @@ class Profile extends StatelessWidget {
     );
   }
 
-  Widget renderHeader() {
+  Widget buildHeader() {
     return Column(
       children: [
         Container(
@@ -119,7 +119,7 @@ class Profile extends StatelessWidget {
     );
   }
 
-  Widget renderBoxSection() {
+  Widget buildBoxSection() {
     return Padding(
       padding: EdgeInsets.only(
         top: 20,
@@ -232,7 +232,7 @@ class Profile extends StatelessWidget {
     );
   }
 
-  Widget renderBody() {
+  Widget buildBody() {
     return Column(
       children: [
         Container(

@@ -35,7 +35,7 @@ class PetList extends StatelessWidget {
         ),
         Expanded(
           child: ListView.builder(
-            itemBuilder: (context, index) => this.renderPet(this.pets[index], context),
+            itemBuilder: (context, index) => this.buildPet(this.pets[index], context),
             itemCount: this.pets.length,
           ),
         )
@@ -43,11 +43,11 @@ class PetList extends StatelessWidget {
     );
   }
 
-  List<Widget> renderList(BuildContext context) {
-    return this.pets.map((Pet pet) => this.renderPet(pet, context)).toList();
+  List<Widget> buildList(BuildContext context) {
+    return this.pets.map((Pet pet) => this.buildPet(pet, context)).toList();
   }
 
-  Widget renderPet(Pet pet, BuildContext context) {
+  Widget buildPet(Pet pet, BuildContext context) {
     final double imageSize = 100;
 
     return GestureDetector(
