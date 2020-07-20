@@ -48,11 +48,13 @@ class _AddPetState extends State<AddPet> {
               centerTitle: true,
             ),
             SliverFillRemaining(
+              hasScrollBody: false,
               child: Container(
                 padding: EdgeInsets.only(
                   left: 15,
                   right: 15,
-                  top: 20
+                  top: 10,
+                  bottom: 30
                 ),
                 child: Form(
                   key: _formKey,
