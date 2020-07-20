@@ -21,7 +21,7 @@ class _AddPetState extends State<AddPet> {
   String _about;
 
   final picker = ImagePicker();
-  File _image;
+  String _image;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -180,14 +180,14 @@ class _AddPetState extends State<AddPet> {
         print(_name);
         print(_about);
         print(_birthdate);
-        // print(_image.path)
+        // print(_image)
         showToast('Muy pronto estará disponible', context: context);
       },
     );
   }
 
   _buildPhotoPickerField() {
-    if (_image == null) {
+    if (_image?.isEmpty ?? true) {
       return GestureDetector(
         child: Container(
           color: Colors.grey[300],
@@ -214,7 +214,7 @@ class _AddPetState extends State<AddPet> {
       child: Image(
         height: 300,
         width: MediaQuery.of(context).size.width,
-        image: AssetImage(_image.path),
+        image: FileImage(new File(_image)),
         fit: BoxFit.cover,
       ),
       onTap: () => _showImageDialog(),
@@ -224,10 +224,8 @@ class _AddPetState extends State<AddPet> {
   Future _getImage(ImageSource source) async {
     final pickedFile = await picker.getImage(source: source);
     setState(() {
-      if (pickedFile != null) {
-        _image = File(pickedFile.path);
-        print(_image);
-      }
+      _image = pickedFile.path;
+      print(_image);
     });
   }
 
