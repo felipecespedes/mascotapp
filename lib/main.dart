@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mascotapp/components/add_pet/add_pet.dart';
 import 'package:mascotapp/components/pet_list/pet_list.dart';
 import 'package:mascotapp/models/pet.dart';
 
@@ -94,6 +95,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddPet())
+          );
+        },
+      ),
       body: SafeArea(
         child: PetList(
           pets: [
